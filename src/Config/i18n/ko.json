@@ -1,0 +1,43 @@
+{
+  "hello": "헬로 월드!",
+  "post": {
+    "title": "타이틀",
+    "name": "홍"
+  },
+  "main": {
+    "tab1": {
+      "li1": "제너레잇 올",
+      "li2": "파서빌러티스 오브",
+      "li3": "빌딩 디자인",
+      "li4": "투 맥시마이즈",
+      "li5": "유어 석세스"
+    },
+    "tab2": {
+      "li1": "Zenerate is a consulting and",
+      "li2": "software development firm",
+      "li3": "providing automated building",
+      "li4": "design solutions on early phase",
+      "li5": "by using an AI engine.",
+      "li6": "",
+      "li7": "We help clients find the most",
+      "li8": "optimized solution satisfying",
+      "li9": "project requirements among ",
+      "li10": "thousands to millions of ",
+      "li11": "algorithm-generated options."
+    },
+    "tab3": {
+      "index1": {
+        "span1": "いろはにほへとちりぬるをわかやたれそつかならむうゐのおくやまけふこえてあさきゆめみしゑひもせす",
+        "span2": "色は匂へど 散りぬるを 我が世誰そ 常ならむ 有為の奥山 今日越えて 浅き夢見じ 酔ひもせず"
+      },
+      "index2": {
+        "span1": "irohanihohetotirinuruwo wakayataresotukanaramu uinookuyamakehukkoete asakiyumemisiehimosesu",
+        "span2": "mawaremawar emawaremawa r emawarem kabennni hana tirasuyouni"
+      },
+      "index3": {
+        "span1": "濁りきっては言えないや",
+        "span2": "fjiogeqgq"
+      }
+    }
+  }
+}

@@ -18,7 +18,8 @@
     "jsx": "react",
     "sourceMap": true,
     "typeRoots": ["./node_modules/@types", "./typings/*.d.ts"],
-    "types": ["node"]
+    "types": ["node"],
+    "strictNullChecks": false
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules"]

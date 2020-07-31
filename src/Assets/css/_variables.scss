@@ -1,0 +1,39 @@
+$bold: 700;
+$semi-bold: 600;
+$regular: 400;
+
+$black: #000000;
+$white: #ffffff;
+
+$main: #4848ff;
+
+$grey-d8: #d8d8d8;
+$grey-97: #979797;
+$grey-f0: #f0f0f0;
+$grey-c4: #c4c4c4;
+$grey-af: #afafaf;
+
+$black-3: #333333;
+$transparent: #00000000;
+$background-darken: #0F172C;
+$background-lighten: #f2f4f9;
+
+$pin-2: #b2a3d9;
+$pin-3: #1d1a27;
+$pin-4: #68baa6;
+
+$purple-1: #690fad;
+$purple-2: #bb89ec;
+$purple-3: #e7e2f8;
+
+$shades-1: #7364ff;
+$shades-2: #9982ff;
+$shades-3: #bea0ff;
+$shades-4: #e2bfff;
+
+
+@mixin eng($weight: 400) {
+  font-family: "neue-haas-grotest-text";
+  letter-spacing: 0.02em;
+  font-weight: $weight;
+}
