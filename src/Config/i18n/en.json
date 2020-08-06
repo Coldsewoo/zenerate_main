@@ -6,38 +6,68 @@
   },
   "main": {
     "tab1": {
-      "li1": "Zenerate all",
-      "li2": "possibilities of",
-      "li3": "building design",
-      "li4": "to maximize",
-      "li5": "your success"
+      "li1": "Zenerate all possibilities of building design to maximize your success."
     },
     "tab2": {
-      "li1": "Zenerate is a consulting and",
-      "li2": "software development firm",
-      "li3": "providing automated building",
-      "li4": "design solutions on early phase",
-      "li5": "by using an AI engine.",
-      "li6": "",
-      "li7": "We help clients find the most",
-      "li8": "optimized solution satisfying",
-      "li9": "project requirements among ",
-      "li10": "thousands to millions of ",
-      "li11": "algorithm-generated options."
+      "li1": "Zenerate is a consulting and software development firm providing automated building design solutions on early phase by using an AI engine.",
+      "li2": "We help clients find the most optimized solution satisfying project requirements among thousands to millions of algorithm-generated options."
     },
     "tab3": {
       "index1": {
-        "span1": "いろはにほへとちりぬるをわかやたれそつかならむうゐのおくやまけふこえてあさきゆめみしゑひもせす",
-        "span2": "色は匂へど 散りぬるを 我が世誰そ 常ならむ 有為の奥山 今日越えて 浅き夢見じ 酔ひもせず"
+        "span1": "Setting up project objectives utilizing plans, rent/home price, construction cost, etc."
       },
       "index2": {
-        "span1": "irohanihohetotirinuruwo wakayataresotukanaramu uinookuyamakehukkoete asakiyumemisiehimosesu",
-        "span2": "mawaremawar emawaremawa r emawarem kabennni hana tirasuyouni"
+        "span1": "Generating millions of options by using optimized algorithms for project objectives"
       },
       "index3": {
-        "span1": "みるものすべてかがやいてみえたあのひび がきれいにわらってる よがまんすることだけおぼえなきゃいけないのおとなになってちょうだいね？ならなくていいよしらないことばかりしらないんあていえなくてたいへんおにあいてうそついてごめんねはっぴーしんせさいざきみのむねのおくまでとどくようなめろでぃかなでるよつまなないたてまえややなことぜんぶけしてあげるからこのおとて",
-        "span2": "fjiogeqgq"
+        "span1": "Comparing options by changing project conditions in real-time on our web platform"
       }
     }
+  },
+  "news": {
+    "news0": {
+      "title": "Hanyang University Campustown Startup Idea Competition Winner",
+      "contents": "Hanyang University and Seongdong-gu(one of 25 district governments of Seoul) held 'HY-Seongdong Campustown Startup Idea Competition', and 'Zenerate' has been awarded as one of the four finalists. There were 230 startup applicants and 35 teams were selected through application review and online presentation.",
+      "created_date": "25 June, 2020"
+    },
+    "news1": {
+      "title": "The First Korea Land and Housing Corporation's Public Data Startup Idea Competition",
+      "contents": "Zenerate was awarded 'Honorable Mention' at 'The First Korea Land and Housing Corporation(LH)'s Public Data Startup Idea Competition'. LH is the government-owned largest housing provider in Korea and held this competition to facilitate the use of public data. Zenerate utilized LH's apartment plan data to swiftly evaluate and score apartment views by using a machine learning method. It enables to evaluate all apartments in a big apartment town and compare different apartment master plans to see which has better view scores. Zenerate will receive continuous support from LH in addition to cash prize.",
+      "created_date": "15 July, 2020"
+    },
+    "news2": {
+      "title": "Zenerate secured seed funding.",
+      "contents": "Zenerate closed their seed round fundraising with three venture capital firms; Bluepoint Partners, Krypton and Plan.H Ventures. Bluepoint Partners and Krypton are the most established and re-known accelerators in Korea and Plan.H is a subsidiary company of Hoban Construction which is a top 10 housing providers in Korea. Krypton also invited 101 Architects, the most admirable architect in Korea, and Neovalue, the most influential lifestyle developer to their investment fund.",
+      "created_date": "24 July, 2020"
+    }
+  },
+  "about": {
+    "intro": "Zenerate team formed in the United States, Spring 2017, started to research on building design automation and has made many achievements such as its first application to a real project, selected as speakers at multiple conferences including American Institute of Architects Conference 2020. In Spring 2020, Bongjai Shin, architectural designer in Los Angeles, and Gahye Jeong, Ph.D. in mathematics and A.I. developer, co-founded their firm, Zenerate Inc., secured their seed funding from three venture capital firms in Korea, and offer building design AI services to the Korea and US markets. By translating building design problems to mathematical ones, they are bringing in a new way of building design and real estate development to Architecture-Engineering-Construction industries.",
+    "shin": {
+      "1": "He is a pioneer of integrating building design and artificial intelligence. After forming his research group in Spring 2017, he has led many research projects and been selected as speakers at multiple conferences including American Institute of Architects conference 2020.",
+      "2": "He holds a bachelor of architecture degree from Hanyang university and a master in architecture degree from Harvard university."
+    },
+    "jeong": "She is a mathematician and A.I. developer and has led Zenerate's A.I. development. She wants to change the AEC industries with a new way of integrating building design and artificial intelligence. She holds a PhD in mathematics form Caltech and a bachelor of mathematics from Seoul national university.",
+    "shin_name": "Bongjai Shin",
+    "jeong_name": "Gahye Jeong"
+  },
+  "form": {
+    "purpose": {
+      "business": "Business",
+      "marketing": "Marketing",
+      "research": "Research",
+      "career": "Career",
+      "feedback": "Feedback"
+    },
+    "name": "Name",
+    "email": "Email",
+    "purpos": "Purpose",
+    "message": "Message",
+    "send": "SEND"
+  },
+  "footer": {
+    "company": "Zenerate Inc.",
+    "CEO": "CEO: BongJai Shin",
+    "addr": "27 Dongil-ro 174-gil, Nowon-gu, 01849, Seoul, Republic of Korea"
   }
 }

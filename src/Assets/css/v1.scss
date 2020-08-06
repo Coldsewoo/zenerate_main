@@ -1,16 +1,16 @@
 @import './_variables.scss';
 
-.header { position: absolute;background: $transparent;z-index:9999;width: 100vw; height: 101px; padding: 33px 48px;
+.header { position: fixed;background: $transparent;width: 100vw; height: 101px; padding: 33px 48px;z-index:1000;
   .header-wrapper {display: flex; flex-wrap: wrap; justify-content: space-between;
     .header-logo { width: 140px; height: 35px;
       a img { width: 140px; height: 35px;}
     }
     .header-nav {
       ul {display: flex; flex-wrap: wrap;}
-      li {margin: 6px 18px;font-weight: $regular;line-height:150%}
+      li {margin: 6px 18px;font-weight: $regular;line-height:125%; font-family: "neue-haas-grotesk-text"}
     }
     .header-lang {
-      button {width: 70px; height: 35px; padding: 7px 18px 3px 19px; border-radius: 18px; background-color: $main; color:$white; font-size: 14px; line-height: 14px;font-weight: bold;}
+      button {width: 70px; height: 35px; padding: 4px 18px 4px 19px; border-radius: 18px; background-color: $main; color:$white; font-size: 14px; line-height: 14px;font-weight: $bold;}
     }
     &.header-white {
       .header-nav {color: white;}
@@ -26,13 +26,14 @@
   }
 }
 
+
 .wrapper { width: 1280px; height:900px;margin: 0px auto; position: relative; padding: 24px 48px;padding-top: calc(24px + 101px)}
 
 
 .section-main-1 { background: #4848FF;
   .wrapper { display: flex; flex-wrap: wrap; flex-direction: column; justify-content: center;
     .main-text {position: absolute; right: 48px; width: 500px;
-      li {font-size: 58px; color: $white; line-height: 125%;font-weight: $regular;}
+      li {font-size: 68px; color: $white; line-height: 125%;font-weight: $bold;}
     }
     .main-image {
       position: absolute; width: 100%; height: 100%; 
@@ -42,13 +43,13 @@
 }
 .section-main-2 { background: $white;
   .wrapper { display: flex; flex-wrap: wrap;flex-direction:column; justify-content: center;
-    .left-image {width: 532px; height: 640px; margin: auto 0px; 
+    .left-image {width: 532px; height: 640px; margin: auto 0px; margin-left: 24px; 
       img {width: 532px; height: 640px;}
     }
-    .right-text { width: 492px; margin: auto 0px;position:absolute; right:48px;
+    .right-text { width: 489px; margin: auto 0px;position:absolute; right:88px;
       ul {
         li { font-size: 32px; line-height: 125%; color: $main;font-weight: $semi-bold;
-          &:empty {min-height:calc(28px * 1.25)}
+          &:first-child {margin-bottom: 35px}
         }
       }
     }
@@ -58,28 +59,27 @@
 .section-main-3 { background: white; 
   .wrapper {
     .icons-wrapper {margin-top: 80px;display: flex; flex-wrap: wrap;justify-content: space-between;
-      .icon-wrapper { width: 270px; text-align: center;;
-        &.active {
-          .icon-title {color: $background-darken}
-          .icon-index span {background: $background-darken}
-        }
+      .icon-wrapper { width: 270px; text-align: center; opacity: 0.5;
+        &.active {opacity: 1;}
         img {width:270px;height:270px;margin-bottom: 12px;}
-        .icon-title { font-size: 24px; line-height: 125%;color: $main;font-weight: $bold; margin-bottom:48px;margin-top:32px;}  
+        .icon-title { font-size: 24px; line-height: 125%;color: $main;font-weight: $bold; margin-bottom:48px;margin-top:32px;font-family: $font-en;}  
         .icon-index { position: relative;
-          span {font-size: 18px; line-height: 18px;color: $white; background-color: $main; border-radius: 50%;padding: 11px 11px 5px 12px;margin-right:1px}
+          .icon { background-color: $main; border-radius: 50%;padding: 5px 11px 4px 10px; width:32px; height:32px; margin: 0px auto; font-family: $font-en;
+            span {font-family: $font-en;font-size: 18px; line-height: 18px;color: $white; font-weight:$semi-bold;}
+          }
           .spacer {width: 372px; height:0px; border-top: solid 2px $main; position: absolute;left: 175px; top: 16px;}
         }
       }
     }
-    .bottom-text { margin-top:48px;width: 100%;
-      span {font-size: 24px; line-height: 1.25; width: 100%;}
+    .icon-text { margin-top:48px;width: 100%; text-align: justify;width:324px;
+      span {font-size: 24px; line-height: 125%; width: 100%;word-break:break-all;color:$main;}
     }
   }
 }
 
 .section-main-4 {
   .wrapper {
-    .title {font-size: 58px; line-height: 1.25;font-weight: $bold;margin-bottom:24px;color: #0000FF; margin-top: 32px;margin-left:126px;}
+    .title {font-size: 58px; line-height: 125%;font-weight: $bold;margin-bottom:24px;color: #0000FF; margin-top: 32px;margin-left:126px;}
     .projects-wrapper {width: 933px; display: flex; flex-wrap: wrap; margin: 0px auto;
       .project {width: 311px; height: 311px;
         img {width: 311px; height: 311px;}
@@ -94,34 +94,35 @@
 .section-main-5 {
   .wrapper { display: flex; flex-wrap: wrap;
     .label-text {height:43px; margin-bottom:8px;
-      input {height: 43px;line-height: 150%;}
+      input {height: 43px;line-height: 125%;}
     }
-    .label-textarea textarea {line-height: 150%;}
-    .left-title {width :330px; margin-right: 100px;
-      span {font-size: 58px; font-weight: $bold; line-height: 1.25; color: #0000FF}
+    .label-textarea textarea {line-height: 125%;}
+    .left-title {width :350px; margin-right: 100px;
+      span {font-size: 58px; font-weight: $bold; line-height: 125%; color: #0000FF;font-family: $font-en;}
     }
     .right-form {width: 600px; margin-left: auto;
       .form-send { margin-left: 12px; 
-        span {font-size: 24px; line-height: 1.25;color: #0000FF; text-decoration: underline;font-weight: $bold; margin-top: 16px}
+        span {font-size: 24px; line-height: 125%;color: #0000FF; text-decoration: underline;font-weight: $bold; margin-top: 16px}
       }
     }
-    .footer-wrapper {width: 100%;height:131px;margin-top:auto;
+    .footer-wrapper {width: 100%;height:131px;margin-top:auto; font-family: $font-en;
       .spacer {width: 100%; margin-bottom: 24px; border-top: solid 1px #0000FF; height: 0px;}
       .inner {display: flex; flex-wrap: wrap; justify-content: space-between;;
         .inner-left {
           .footer-text {font-size: 15px; line-height: 150%; color: #0000FF; font-weight: $bold;}
         }
         .inner-right { display: flex; flex-wrap: wrap; flex-direction: column; align-items: flex-end;position:relative;margin-bottom:8px;
-          .newsletter-button {width: 320px; height: 50px; border-radius: 20px; border: solid 2px #0000FF; padding: 7px 20px;position:absolute; bottom: 0px;
-            span {font-size:24px; font-weight: $bold; line-height: 1.5; color: #0000FF}
-            &.active { background: #0000FF;
+          .newsletter-button {width: 330px; height: 50px; border-radius: 20px; border: solid 2px #0000FF; padding: 7px 20px;position:absolute; bottom: 0px;
+            span {font-size:24px; font-weight: $bold; color: #0000FF}
+            &:hover { background: #0000FF;
               span{color: $white;}
             }
-            &.expanded { height: 180px;
+            &.expanded { height: 180px;  background: #0000FF;
+              span{color: $white;}
               .expanded-inner { padding: 9px 0px;
-                span {font-size: 24px; line-height: 1.5; font-weight: $semi-bold;}
-                .margin-8 {margin-bottom: 8px;}
-                input {width: 100%;height: 36px; font-size: 24px; line-height: 1.5;padding: 0px 8px;background: $transparent;border: solid 1px $white; color: $white;margin-bottom:8px;}
+                span {font-size: 24px; line-height: 125%; font-weight: $semi-bold;}
+                .margin-8 {margin-bottom: 16px;}
+                input {width: 100%;height: 36px; font-size: 24px;padding: 0px 8px;background: $transparent;border: solid 1px $white; color: $white;margin-bottom:8px;}
                 input::placeholder {color: $white}
                 .button-send {width: 100%; text-align: right;
                   span {font-size: 16px;text-decoration: underline;}
@@ -131,6 +132,60 @@
           }
         }
       }
+    }
+  }
+}
+
+.section-news-1 {
+  .news-wrapper { width: 100%; height: 100%; display:flex; flex-wrap: wrap; justify-content:space-between;
+    .news-nav {width: 0px; height: 0px;margin: auto 0px;
+      &.prev {border-top: 20px solid $transparent; border-bottom: 20px solid $transparent; border-right: 35px solid $main;margin-right:24px}
+      &.next {border-top: 20px solid $transparent; border-bottom: 20px solid $transparent; border-left: 35px solid $main;margin-left:24px}
+      &.placeholder {border-color: $transparent}
+    }
+    .news-item-wrapper { width: 320px; height: 420px; border: solid 2px $main; border-radius: 8px; margin: auto 0px;display:flex; flex-direction: column; justify-content: center; flex-wrap: nowrap;;
+      .news-item-date {width: 100%; height: 60px; border-bottom: solid 2px $main;text-align: center;
+        span {font-size:20px; color: $main;line-height: 60px;}
+      }
+      .news-item-title {width: 100%; height: auto;margin: auto; text-align: center;padding: 0px 24px;
+        span {font-size: 31px; color: $main; font-weight: $semi-bold;line-height: 125%;}
+      }
+      &:hover { background-color: $main;
+        .news-item-date {border-bottom-color: $white}
+        span {color: $white}
+      }
+    }
+  }
+}
+
+.news-modal {position: fixed;display: block; width: 100vw; height: 100vh; background-color: rgba($black, 0.5);z-index:1002 !important; top:0;left:0;
+  .news-modal-wrapper {width: 500px; height: 100vh; position: absolute; left: 0; background-color: $main;padding:72px 32px;
+    .news-modal-item {
+      &.close {position: absolute; top: 16px; right:16px; 
+        i {color: $white;font-size: 36px;}
+      }
+      &.date {font-size: 21px; color: $white;margin-bottom:32px}
+      &.title {font-size: 31px; color: $white;font-weight: $bold;margin-bottom:48px}
+      &.content {font-size: 21px; color: $white}
+    }
+  }
+}
+
+
+.section-about-1 { background: $main;
+  .title { color: $white; font-size:70px;}
+  .text {color: $white; font-size:30px;margin-top: 128px;padding: 0px 48px;}
+}
+
+.section-about-2 { background: $main;
+  .title { color: $white; font-size: 70px;}
+  .team-wrapper {display: flex; flex-wrap: wrap; justify-content: space-between; width: 760px; margin: 40px auto; 
+    .member { width: 300px;
+      .avatar {width: 225px; height: 225px; border-radius: 50%; background-color: $black; margin: 0px auto;
+        img {width: 208px; height: 208px; margin: 9px 0px 0px 9px;}
+      }
+      .name {margin-top: 16px; font-size: 30px; color: $white; width: 100%; text-align: center;}
+    .intro {margin-top: 32px; color: $white;font-size:20px;text-align: left; word-break: break-all;}
     }
   }
 }

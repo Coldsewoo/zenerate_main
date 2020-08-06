@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-//@ts-ignore
 import {
   useScrollIndexState,
   useScrollIndexDispatch,
@@ -7,6 +6,11 @@ import {
 } from '../Context/Scroll.context.tsx'
 // @ts-ignore
 import { useLangDispatch, useLangState } from '../Context/I18n.context.tsx'
+import {
+  useToggleModalDispatch,
+  useToggleModalState,
+  //@ts-ignore
+} from '../Context/Modal.context.tsx'
 import { useTranslation } from 'react-i18next'
 import { THEME } from '../Config/theme'
 import { Link, withRouter } from 'react-router-dom'
@@ -19,6 +23,9 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
   const setScroll = useScrollIndexDispatch()
   const lang = useLangState()
   const dispatchLang = useLangDispatch()
+
+  const ToggleModal = useToggleModalState()
+  const dispatchToggleModal = useToggleModalDispatch()
 
   const [t, i18n] = useTranslation('lang', { useSuspense: false })
 
@@ -35,7 +42,11 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
 
   return (
     <>
-      <section className="header">
+      <section
+        className="header"
+        style={{
+          zIndex: ToggleModal ? 0 : 1000,
+        }}>
         <div className="header-pc">
           <div
             className={`header-wrapper ${
@@ -49,11 +60,15 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
             <div className="header-nav">
               <ul>
                 <li>
-                  <Link to="/project">ABOUT</Link>
+                  <Link to="/about">ABOUT</Link>
                 </li>
-                <li>PROJECTS</li>
-                <li>NEWS</li>
-                <li>CONTACT US</li>
+                {/* <li>PROJECTS</li> */}
+                <li>
+                  <Link to="/news">NEWS</Link>
+                </li>
+                <li>
+                  <Link to="/contact">CONTACT US</Link>
+                </li>
               </ul>
             </div>
             <div className="header-lang" onClick={handleLanguageChange}>

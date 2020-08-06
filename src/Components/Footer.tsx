@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface Props {}
 
 const Footer: React.FC<Props> = () => {
-  const [hovered, setHover] = useState(false)
   const [clicked, setClick] = useState(false)
 
   const handleClick = (
@@ -14,20 +14,22 @@ const Footer: React.FC<Props> = () => {
     setClick(flag)
   }
 
+  const t = useTranslation('lang', { useSuspense: false })[0]
+
   return (
     <div className="footer-wrapper">
       <div className="spacer" />
       <div className="inner">
         <div className="inner-left">
           <div className="footer-text">
-            <span>Zenerate Inc.</span>
+            <span>{t('footer.company')}</span>
           </div>
           <div className="footer-text">
-            <span>CEO: BongJai Shin</span>
+            <span>{t('footer.ceo')}</span>
           </div>
           <div className="footer-text">
             <span>
-              27 Dongil-ro 174-gil, Nowon-gu, 01849, Seoul, Republic of Korea
+              <span>{t('footer.addr')}</span>
             </span>
           </div>
           <div className="footer-text">
@@ -40,10 +42,8 @@ const Footer: React.FC<Props> = () => {
         <div className="inner-right">
           <div
             className={`newsletter-button  ${
-              hovered || clicked ? 'active' : ''
-            } ${clicked ? 'expanded' : 'hover-pointer'}`}
-            onMouseEnter={() => setHover(true)}
-            onMouseLeave={() => setHover(false)}
+              clicked ? 'expanded' : 'hover-pointer'
+            }`}
             onClick={($evt) => handleClick($evt, true)}>
             {clicked ? (
               <div className="expanded-inner">

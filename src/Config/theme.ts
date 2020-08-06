@@ -30,7 +30,21 @@ export const THEME = {
       header: 'transparent',
     },
   },
-  '/project': {
+  '/about': {
+    init: {
+      logo: logo.white,
+      header: 'header-white',
+    },
+    0: {
+      logo: logo.white,
+      header: 'header-white',
+    },
+    1: {
+      logo: logo.white,
+      header: 'header-white',
+    },
+  },
+  '/news': {
     init: {
       logo: logo.color,
       header: 'header-color',
@@ -39,21 +53,15 @@ export const THEME = {
       logo: logo.color,
       header: 'header-color',
     },
-    1: {
+  },
+  '/contact': {
+    init: {
       logo: logo.color,
       header: 'header-color',
     },
-    2: {
+    0: {
       logo: logo.color,
       header: 'header-color',
-    },
-    3: {
-      logo: 'white',
-      header: 'header-white',
-    },
-    4: {
-      logo: logo.white,
-      header: 'header-white',
     },
   },
 }

@@ -1,13 +1,12 @@
 import React, { ReactElement } from 'react'
+import { Route, Switch, Redirect, RouteProps } from 'react-router-dom'
 import {
-  Route,
-  Switch,
-  Redirect,
-  withRouter,
-  RouteComponentProps,
-  RouteProps,
-} from 'react-router-dom'
-import { MainView, ProjectView, NotFoundView } from '../Views'
+  MainView,
+  NotFoundView,
+  AboutView,
+  NewsView,
+  ContactView,
+} from '../Views'
 import DefaultLayout from '../Layouts'
 import { WithRouterStatics } from 'react-router'
 // interface Props {}
@@ -47,9 +46,21 @@ export const DefaultRouter: React.FC<Props> = () => {
       />
       <DefaultRoute
         exact
-        path="/project"
+        path="/about"
         layout={DefaultLayout}
-        component={ProjectView}
+        component={AboutView}
+      />
+      <DefaultRoute
+        exact
+        path="/news"
+        layout={DefaultLayout}
+        component={NewsView}
+      />
+      <DefaultRoute
+        exact
+        path="/contact"
+        layout={DefaultLayout}
+        component={ContactView}
       />
       <DefaultRoute
         exact

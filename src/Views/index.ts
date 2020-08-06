@@ -1,3 +1,5 @@
 export { default as MainView } from './MainView'
 export { NotFoundView } from './NotFoundView'
-export { default as ProjectView } from './ProjectView'
+export { default as AboutView } from './AboutView'
+export { default as NewsView } from './NewsView'
+export { default as ContactView } from './ContactView'

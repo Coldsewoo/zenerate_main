@@ -1,28 +1,21 @@
-import React, {
-  isValidElement,
-  cloneElement,
-  Children,
-  useState,
-  useEffect,
-} from 'react'
+import React, { isValidElement, cloneElement, Children } from 'react'
 import { Header } from '../Components'
 import ReactFullpage from '@fullpage/react-fullpage'
 import {
-  useScrollIndexState,
   useScrollIndexDispatch,
   // @ts-ignore
 } from '../Context/Scroll.context.tsx'
 
-import { RouteComponentProps, RouteProps } from 'react-router-dom'
+import {
+  useLangState,
+  // @ts-ignore
+} from '../Context/I18n.context.tsx'
 
-interface Props extends RouteProps {
-  
-}
+import { RouteProps } from 'react-router-dom'
 
-const DefaultLayout: React.FC<Props> = ({
-  children,
-  ...props
-}) => {
+interface Props extends RouteProps {}
+
+const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
   const dispatch = useScrollIndexDispatch()
   const onChangeIndex = ({ destination }) => {
     dispatch({
@@ -30,9 +23,18 @@ const DefaultLayout: React.FC<Props> = ({
       data: destination,
     })
   }
+  const langState = useLangState()
 
   return (
-    <div className="body">
+    <div
+      className="body"
+      style={{
+        fontFamily:
+          langState === 'ko'
+            ? 'source-han-sans-korean'
+            : 'neue-haas-grotesk-text',
+      }}
+      >
       <Header {...props}></Header>
       <section className="section-wrapper">
         <ReactFullpage
@@ -55,7 +57,7 @@ const DefaultLayout: React.FC<Props> = ({
                 <>
                   {Children.map(children, (child) => {
                     if (isValidElement(child)) {
-                      return cloneElement(child, {})
+                      return cloneElement(child, { state })
                     }
                     return child
                   })}

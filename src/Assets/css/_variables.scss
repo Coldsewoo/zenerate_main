@@ -31,9 +31,5 @@ $shades-2: #9982ff;
 $shades-3: #bea0ff;
 $shades-4: #e2bfff;
 
-
-@mixin eng($weight: 400) {
-  font-family: "neue-haas-grotest-text";
-  letter-spacing: 0.02em;
-  font-weight: $weight;
-}
+$font-en: 'neue-haas-grotesk-text';
+$font-kr: 'source-han-sans-korean';

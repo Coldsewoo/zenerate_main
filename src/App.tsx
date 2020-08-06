@@ -9,6 +9,8 @@ import history from './Config/history'
 import { ScrollIndexContextProvider } from './Context/Scroll.context.tsx'
 //@ts-ignore
 import { LangContextProvider } from './Context/I18n.context'
+//@ts-ignore
+import { ToggleModalContextProvider } from './Context/Modal.context'
 import { DefaultRouter } from './Routes'
 import { Router } from 'react-router-dom'
 
@@ -17,9 +19,11 @@ const App = () => {
     <div className="App">
       <ScrollIndexContextProvider>
         <LangContextProvider>
-          <Router history={history}>
-            <DefaultRouter />
-          </Router>
+          <ToggleModalContextProvider>
+            <Router history={history}>
+              <DefaultRouter />
+            </Router>
+          </ToggleModalContextProvider>
         </LangContextProvider>
       </ScrollIndexContextProvider>
     </div>
