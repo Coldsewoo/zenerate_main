@@ -103,6 +103,7 @@
     .right-form {width: 600px; margin-left: auto;
       .form-send { margin-left: 12px; 
         span {font-size: 24px; line-height: 125%;color: #0000FF; text-decoration: underline;font-weight: $bold; margin-top: 16px}
+        .sent {text-decoration: none;}
       }
     }
     .footer-wrapper {width: 100%;height:131px;margin-top:auto; font-family: $font-en;
@@ -158,7 +159,7 @@
   }
 }
 
-.news-modal {position: fixed;display: block; width: 100vw; height: 100vh; background-color: rgba($black, 0.5);z-index:1002 !important; top:0;left:0;
+.news-modal {position: fixed;display: block; width: calc(100vw + 500px); height: 100vh; background-color: rgba($black, 0.5);z-index:1002 !important; top:0;left:0;
   .news-modal-wrapper {width: 500px; height: 100vh; position: absolute; left: 0; background-color: $main;padding:72px 32px;
     .news-modal-item {
       &.close {position: absolute; top: 16px; right:16px; 
@@ -167,6 +168,10 @@
       &.date {font-size: 21px; color: $white;margin-bottom:32px}
       &.title {font-size: 31px; color: $white;font-weight: $bold;margin-bottom:48px}
       &.content {font-size: 21px; color: $white}
+      &.links {font-size: 24px; color: $white; margin-top:32px;
+        ul {margin-top: 16px;}
+        li {font-size:18px; text-decoration: underline;}
+      }
     }
   }
 }

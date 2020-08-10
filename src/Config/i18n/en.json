@@ -28,17 +28,29 @@
     "news0": {
       "title": "Hanyang University Campustown Startup Idea Competition Winner",
       "contents": "Hanyang University and Seongdong-gu(one of 25 district governments of Seoul) held 'HY-Seongdong Campustown Startup Idea Competition', and 'Zenerate' has been awarded as one of the four finalists. There were 230 startup applicants and 35 teams were selected through application review and online presentation.",
-      "created_date": "25 June, 2020"
+      "created_date": "25 June, 2020",
+      "linkTitle": "Related Articles",
+      "link1": "http://www.lecturernews.com/news/articleView.html?idxno=42941",
+      "link2": "http://www.jobnjoy.com/portal/joy/life_view.jsp?nidx=410969&depth1=2&depth2=2&depth3=8",
+      "link3": "http://news.unn.net/news/articleView.html?idxno=231494"
     },
     "news1": {
       "title": "The First Korea Land and Housing Corporation's Public Data Startup Idea Competition",
       "contents": "Zenerate was awarded 'Honorable Mention' at 'The First Korea Land and Housing Corporation(LH)'s Public Data Startup Idea Competition'. LH is the government-owned largest housing provider in Korea and held this competition to facilitate the use of public data. Zenerate utilized LH's apartment plan data to swiftly evaluate and score apartment views by using a machine learning method. It enables to evaluate all apartments in a big apartment town and compare different apartment master plans to see which has better view scores. Zenerate will receive continuous support from LH in addition to cash prize.",
-      "created_date": "15 July, 2020"
+      "created_date": "15 July, 2020",
+      "linkTitle": "",
+      "link1": "",
+      "link2": "",
+      "link3": ""
     },
     "news2": {
       "title": "Zenerate secured seed funding.",
       "contents": "Zenerate closed their seed round fundraising with three venture capital firms; Bluepoint Partners, Krypton and Plan.H Ventures. Bluepoint Partners and Krypton are the most established and re-known accelerators in Korea and Plan.H is a subsidiary company of Hoban Construction which is a top 10 housing providers in Korea. Krypton also invited 101 Architects, the most admirable architect in Korea, and Neovalue, the most influential lifestyle developer to their investment fund.",
-      "created_date": "24 July, 2020"
+      "created_date": "24 July, 2020",
+      "linkTitle": "Related Articles",
+      "link1": "https://www.venturesquare.net/812696",
+      "link2": "https://platum.kr/archives/146280",
+      "link3": ""
     }
   },
   "about": {
@@ -63,11 +75,12 @@
     "email": "Email",
     "purpos": "Purpose",
     "message": "Message",
-    "send": "SEND"
+    "send": "SEND",
+    "sent": "Contact form has been sent. Thank you!"
   },
   "footer": {
     "company": "Zenerate Inc.",
-    "CEO": "CEO: BongJai Shin",
+    "ceo": "CEO: BongJai Shin",
     "addr": "27 Dongil-ro 174-gil, Nowon-gu, 01849, Seoul, Republic of Korea"
   }
 }

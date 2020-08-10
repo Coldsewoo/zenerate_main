@@ -26,8 +26,8 @@ export const THEME = {
       header: 'header-color',
     },
     init: {
-      logo: '',
-      header: 'transparent',
+      logo: logo.white,
+      header: 'header-white',
     },
   },
   '/about': {

@@ -5,6 +5,8 @@ import { useToggleModalDispatch } from '../Context/Modal.context'
 import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { CSSTransition } from 'react-transition-group'
+
 interface Props {
   state: any
 }
@@ -71,30 +73,73 @@ const NewsView: React.FC<Props> = ({ state }) => {
           </div>
         </div>
       </div>
-      {newsModalIndex !== null && (
+      <CSSTransition
+        in={newsModalIndex !== null}
+        timeout={300}
+        classNames="fade"
+        unmountOnExit>
         <section
-          className="news-modal"
+          className={`news-modal`}
           onClick={($evt) => handleModalIndex($evt, null)}>
-          <div
-            className="news-modal-wrapper"
-            onClick={($evt) => $evt.stopPropagation()}>
+          <CSSTransition
+            in={newsModalIndex !== null}
+            timeout={300}
+            classNames="slide-right"
+            unmountOnExit>
             <div
-              className="news-modal-item close hover-pointer"
-              onClick={($evt) => handleModalIndex($evt, null)}>
-              <i className="material-icons">close</i>
+              className="news-modal-wrapper"
+              onClick={($evt) => $evt.stopPropagation()}>
+              <div
+                className="news-modal-item close hover-pointer"
+                onClick={($evt) => handleModalIndex($evt, null)}>
+                <i className="material-icons">close</i>
+              </div>
+              {newsModalIndex !== null && (
+                <>
+                  <div className="news-modal-item date">
+                    <span>{t(`news.news${newsModalIndex}.created_date`)}</span>
+                  </div>
+                  <div className="news-modal-item title">
+                    <span>{t(`news.news${newsModalIndex}.title`)}</span>
+                  </div>
+                  <div className="news-modal-item content">
+                    <span>{t(`news.news${newsModalIndex}.contents`)}</span>
+                  </div>
+                  <div className="news-modal-item links">
+                    <span>{t(`news.news${newsModalIndex}.linkTitle`)}</span>
+                    <ul>
+                      <li>
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={t(`news.news${newsModalIndex}.link1`)}>
+                          {t(`news.news${newsModalIndex}.link1`)}
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={t(`news.news${newsModalIndex}.link2`)}>
+                          {t(`news.news${newsModalIndex}.link2`)}
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={t(`news.news${newsModalIndex}.link3`)}>
+                          {t(`news.news${newsModalIndex}.link3`)}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </>
+              )}
             </div>
-            <div className="news-modal-item date">
-              <span>{t(`news.news${newsModalIndex}.created_date`)}</span>
-            </div>
-            <div className="news-modal-item title">
-              <span>{t(`news.news${newsModalIndex}.title`)}</span>
-            </div>
-            <div className="news-modal-item content">
-              <span>{t(`news.news${newsModalIndex}.contents`)}</span>
-            </div>
-          </div>
+          </CSSTransition>
         </section>
-      )}
+      </CSSTransition>
     </>
   )
 }

@@ -4,7 +4,7 @@ const { req, apiClient } = client
 type emailForm = {
   name: string
   email: string
-  category: string
+  purpose: string
   message: string
 }
 

@@ -5,6 +5,8 @@ import { SelectInput, Item } from '../Components/inputs/SelectInput'
 import { RouteComponentProps } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
+import ApiService from '../Service/api'
+
 interface Props extends RouteComponentProps {}
 
 type emailForm = {
@@ -29,30 +31,51 @@ const ContactView: React.FC<Props> = ({ match, history, location }) => {
     })
   }
 
+  const [formSending, setFormSending] = useState<boolean>(false)
+  const [formSent, setFormSent] = useState<boolean>(false)
+
   const t = useTranslation('lang', { useSuspense: false })[0]
 
   const items: Item[] = [
     {
       id: 0,
-      value: t('purpose.business'),
+      value: t('form.purpose.business'),
     },
     {
       id: 1,
-      value: t('purpose.marketing'),
+      value: t('form.purpose.marketing'),
     },
     {
       id: 2,
-      value: t('purpose.research'),
+      value: t('form.purpose.research'),
     },
     {
       id: 3,
-      value: t('purpose.career'),
+      value: t('form.purpose.career'),
     },
     {
       id: 4,
-      value: t('purpose.feedback'),
+      value: t('form.purpose.feedback'),
     },
   ]
+
+  const sendForm = () => {
+    if (!formSending) {
+      setFormSending(true)
+      ApiService.sendEmail({ data: emailForm })
+        .then((res) => {
+          setEmailForm({
+            name: '',
+            email: '',
+            purpose: '',
+            message: '',
+          })
+          setFormSent(true)
+          setFormSending(false)
+        })
+        .catch((err) => console.log(err))
+    }
+  }
 
   return (
     <>
@@ -94,7 +117,11 @@ const ContactView: React.FC<Props> = ({ match, history, location }) => {
               />
             </div>
             <div className="form-send">
-              <span className="hover-pointer">{t('form.send')}</span>
+              <span className="hover-pointer" onClick={() => sendForm()}>
+                {t('form.send')}
+              </span>
+              <br />
+              {formSent && <span className="sent">{t('form.sent')}</span>}
             </div>
           </div>
           <Footer />
