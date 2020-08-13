@@ -1,5 +1,12 @@
 {
   "hello": "Hello World!",
+  "header": {
+    "nav": {
+      "about": "ABOUT",
+      "news": "NEWS",
+      "contact": "CONTACT US"
+    }
+  },
   "post": {
     "title": "title",
     "name": "Hong"
@@ -9,8 +16,8 @@
       "li1": "Zenerate all possibilities of building design to maximize your success."
     },
     "tab2": {
-      "li1": "Zenerate is a consulting and software development firm providing automated building design solutions on early phase by using an AI engine.",
-      "li2": "We help clients find the most optimized solution satisfying project requirements among thousands to millions of algorithm-generated options."
+      "li1": "Zenerate uses AI engine to provide building design solution on early phase.",
+      "li2": "We help clients find the most optimized solution by generating millions of options."
     },
     "tab3": {
       "index1": {
@@ -38,9 +45,9 @@
       "title": "The First Korea Land and Housing Corporation's Public Data Startup Idea Competition",
       "contents": "Zenerate was awarded 'Honorable Mention' at 'The First Korea Land and Housing Corporation(LH)'s Public Data Startup Idea Competition'. LH is the government-owned largest housing provider in Korea and held this competition to facilitate the use of public data. Zenerate utilized LH's apartment plan data to swiftly evaluate and score apartment views by using a machine learning method. It enables to evaluate all apartments in a big apartment town and compare different apartment master plans to see which has better view scores. Zenerate will receive continuous support from LH in addition to cash prize.",
       "created_date": "15 July, 2020",
-      "linkTitle": "",
-      "link1": "",
-      "link2": "",
+      "linkTitle": "Related Articles",
+      "link1": "https://www.news1.kr/articles/?4013885",
+      "link2": "https://www.asiatoday.co.kr/view.php?key=20200802010000047",
       "link3": ""
     },
     "news2": {
@@ -50,14 +57,13 @@
       "linkTitle": "Related Articles",
       "link1": "https://www.venturesquare.net/812696",
       "link2": "https://platum.kr/archives/146280",
-      "link3": ""
+      "link3": "https://www.metroseoul.co.kr/article/20200802500156"
     }
   },
   "about": {
     "intro": "Zenerate team formed in the United States, Spring 2017, started to research on building design automation and has made many achievements such as its first application to a real project, selected as speakers at multiple conferences including American Institute of Architects Conference 2020. In Spring 2020, Bongjai Shin, architectural designer in Los Angeles, and Gahye Jeong, Ph.D. in mathematics and A.I. developer, co-founded their firm, Zenerate Inc., secured their seed funding from three venture capital firms in Korea, and offer building design AI services to the Korea and US markets. By translating building design problems to mathematical ones, they are bringing in a new way of building design and real estate development to Architecture-Engineering-Construction industries.",
     "shin": {
-      "1": "He is a pioneer of integrating building design and artificial intelligence. After forming his research group in Spring 2017, he has led many research projects and been selected as speakers at multiple conferences including American Institute of Architects conference 2020.",
-      "2": "He holds a bachelor of architecture degree from Hanyang university and a master in architecture degree from Harvard university."
+      "1": "He is a pioneer of integrating building design and artificial intelligence. Since forming his research group in 2017, he has led many research projects and been selected as speakers at multiple conferences including AIA 2020. He holds a bachelor of architecture degree from Hanyang university and a master in architecture degree from Harvard university."
     },
     "jeong": "She is a mathematician and A.I. developer and has led Zenerate's A.I. development. She wants to change the AEC industries with a new way of integrating building design and artificial intelligence. She holds a PhD in mathematics form Caltech and a bachelor of mathematics from Seoul national university.",
     "shin_name": "Bongjai Shin",
@@ -80,7 +86,13 @@
   },
   "footer": {
     "company": "Zenerate Inc.",
-    "ceo": "CEO: BongJai Shin",
-    "addr": "27 Dongil-ro 174-gil, Nowon-gu, 01849, Seoul, Republic of Korea"
+    "ceo": "CEO: Bongjai Shin",
+    "addr": "27 Dongil-ro 174-gil, Nowon-gu, 01849, Seoul, Republic of Korea",
+    "newsletter": {
+      "subscription": "Newsletter Subscription",
+      "submit": "submit",
+      "context1": "Sign up to subscribe",
+      "context2": "Zenerate Newsletter!"
+    }
   }
 }

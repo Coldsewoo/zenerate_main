@@ -12,4 +12,7 @@ export default {
   sendEmail({ data }: { data: emailForm }) {
     return req(apiClient.post('main/email', data))
   },
+  subscribe(email: string) {
+    return req(apiClient.post('subscribe', { email_address: email }))
+  },
 }

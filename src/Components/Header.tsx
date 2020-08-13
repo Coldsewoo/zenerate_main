@@ -60,14 +60,14 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
             <div className="header-nav">
               <ul>
                 <li>
-                  <Link to="/about">ABOUT</Link>
+          <Link to="/about">{t('header.nav.about')}</Link>
                 </li>
                 {/* <li>PROJECTS</li> */}
                 <li>
-                  <Link to="/news">NEWS</Link>
+                  <Link to="/news">{t('header.nav.news')}</Link>
                 </li>
                 <li>
-                  <Link to="/contact">CONTACT US</Link>
+                  <Link to="/contact">{t('header.nav.contact')}</Link>
                 </li>
               </ul>
             </div>

@@ -28,12 +28,12 @@ const AboutView: React.FC = () => {
                 <img src="/img/about_bj.gif" alt="BJ" />
               </div>
               <div className="name">
-                <span>CEO {t('about.shin_name')}</span>
+                <span className="ceo">CEO</span>
+                <br/>
+                <span className="namet">{t('about.shin_name')}</span>
               </div>
               <div className="intro">
                 <span>{t('about.shin.1')}</span>
-                <br />
-                <span>{t('about.shin.2')}</span>
               </div>
             </div>
             <div className="member">
@@ -41,7 +41,9 @@ const AboutView: React.FC = () => {
                 <img src="/img/about_gh.gif" alt="GH" />
               </div>
               <div className="name">
-                <span>CTO {t('about.jeong_name')}</span>
+                <span className="ceo">CTO</span>
+                <br/>
+                <span className="namet">{t('about.jeong_name')}</span>
               </div>
               <div className="intro">
                 <span>{t('about.jeong')}</span>

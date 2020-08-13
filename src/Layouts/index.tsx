@@ -33,13 +33,12 @@ const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
           langState === 'ko'
             ? 'source-han-sans-korean'
             : 'neue-haas-grotesk-text',
-      }}
-      >
+      }}>
       <Header {...props}></Header>
       <section className="section-wrapper">
         <ReactFullpage
           //fullpage options
-          licenseKey="OPEN-SOURCE-GPLV3-LIC    ENSE"
+          licenseKey="OPEN-SOURCE-GPLV3-LICENSE"
           scrollingSpeed={600} /* Options here */
           onLeave={(origin, destination, direction) => {
             onChangeIndex({ destination })
@@ -47,11 +46,17 @@ const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
           key={props.location.key}
           navigation={true}
           lazyloading
+          responsiveWidth={1279}
           refresh
           keyboardScrolling
           scrollOverflow
           navigationPosition={'right'}
           render={({ state, fullpageApi }) => {
+            if (state.sectionCount === 1) {
+              document
+                .querySelector('#fp-nav')
+                .setAttribute('style', 'display:none;')
+            }
             return (
               <ReactFullpage.Wrapper>
                 <>

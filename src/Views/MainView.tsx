@@ -124,7 +124,7 @@ const MainView: React.FC<Props> = ({ match, history, location }) => {
                 <div className="spacer"></div>
               </div>
               <div className="icon-text">
-                {hovered === 0 && <span>{t(`main.tab3.index1.span1`)}</span>}
+                {hovered === 0 && <span className="hyphenate">{t(`main.tab3.index1.span1`)}</span>}
               </div>
             </div>
             <div className={`icon-wrapper ${hovered === 1 ? 'active' : ''}`}>
@@ -143,7 +143,7 @@ const MainView: React.FC<Props> = ({ match, history, location }) => {
                 <div className="spacer"></div>
               </div>
               <div className="icon-text">
-                {hovered === 1 && <span>{t(`main.tab3.index2.span1`)}</span>}
+                {hovered === 1 && <span className="hyphenate">{t(`main.tab3.index2.span1`)}</span>}
               </div>
             </div>
             <div className={`icon-wrapper ${hovered === 2 ? 'active' : ''}`}>
@@ -160,7 +160,7 @@ const MainView: React.FC<Props> = ({ match, history, location }) => {
                 </div>
               </div>
               <div className="icon-text">
-                {hovered === 2 && <span>{t(`main.tab3.index3.span1`)}</span>}
+                {hovered === 2 && <span className="hyphenate">{t(`main.tab3.index3.span1`)}</span>}
               </div>
             </div>
           </div>
