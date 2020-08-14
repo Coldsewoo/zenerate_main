@@ -89,7 +89,7 @@ const MainView: React.FC<Props> = ({ match, history, location }) => {
             <img src="/img/zenerate_main.gif" alt="" />
           </div>
           <ul className="main-text">
-            <li style={{ width: 467 }}>{t('main.tab1.li1')}</li>
+            <li>{t('main.tab1.li1')}</li>
           </ul>
         </div>
       </div>
@@ -98,6 +98,7 @@ const MainView: React.FC<Props> = ({ match, history, location }) => {
           <div className="left-image">
             <img src="/img/final_color.gif" alt="" />
           </div>
+
           <div className="right-text">
             <ul>
               <li>{t('main.tab2.li1')}</li>
@@ -124,7 +125,11 @@ const MainView: React.FC<Props> = ({ match, history, location }) => {
                 <div className="spacer"></div>
               </div>
               <div className="icon-text">
-                {hovered === 0 && <span className="hyphenate">{t(`main.tab3.index1.span1`)}</span>}
+                {hovered === 0 && (
+                  <span className="hyphenate">
+                    {t(`main.tab3.index1.span1`)}
+                  </span>
+                )}
               </div>
             </div>
             <div className={`icon-wrapper ${hovered === 1 ? 'active' : ''}`}>
@@ -143,7 +148,11 @@ const MainView: React.FC<Props> = ({ match, history, location }) => {
                 <div className="spacer"></div>
               </div>
               <div className="icon-text">
-                {hovered === 1 && <span className="hyphenate">{t(`main.tab3.index2.span1`)}</span>}
+                {hovered === 1 && (
+                  <span className="hyphenate">
+                    {t(`main.tab3.index2.span1`)}
+                  </span>
+                )}
               </div>
             </div>
             <div className={`icon-wrapper ${hovered === 2 ? 'active' : ''}`}>
@@ -160,7 +169,11 @@ const MainView: React.FC<Props> = ({ match, history, location }) => {
                 </div>
               </div>
               <div className="icon-text">
-                {hovered === 2 && <span className="hyphenate">{t(`main.tab3.index3.span1`)}</span>}
+                {hovered === 2 && (
+                  <span className="hyphenate">
+                    {t(`main.tab3.index3.span1`)}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -233,6 +246,110 @@ const MainView: React.FC<Props> = ({ match, history, location }) => {
           <Footer />
         </div>
       </div>
+      <section className="section-main-mobile mobile">
+        <div className="mobile-wrapper">
+          <div className="first contents-padding">
+            <div className="image-wrapper">
+              <img src="/img/zenerate_main.gif" alt="" />
+            </div>
+            <div className="text-wrapper">
+              <span>{t('main.tab1.li1')}</span>
+            </div>
+          </div>
+          <div className="second contents-padding">
+            <div className="image-wrapper">
+              <img src="/img/final_color.gif" alt="" />
+            </div>
+            <div className="text-wrapper">
+              <ul>
+                <li>{t('main.tab2.li1')}</li>
+                <li>{t('main.tab2.li2')}</li>
+              </ul>
+            </div>
+          </div>
+          <div className="third contents-padding">
+            <div className="icons-wrapper">
+              <div className={`icon-wrapper`}>
+                <div className="hover-pointer">
+                  <img src={`/img/about_client.svg`} alt="" />
+                  <span className="icon-title">Client Meeting</span>
+                </div>
+                <div className="icon-text">
+                  <span>{t(`main.tab3.index1.span1`)}</span>
+                </div>
+              </div>
+            </div>
+            <div className="icons-wrapper">
+              <div className={`icon-wrapper`}>
+                <div className="hover-pointer">
+                  <img src={`/img/about_process.svg`} alt="" />
+                  <span className="icon-title">Processing</span>
+                </div>
+                <div className="icon-text">
+                  <span>{t(`main.tab3.index2.span1`)}</span>
+                </div>
+              </div>
+            </div>
+            <div className="icons-wrapper">
+              <div className={`icon-wrapper`}>
+                <div className="hover-pointer">
+                  <img src={`/img/about_delivery.svg`} alt="" />
+                  <span className="icon-title">Delivery</span>
+                </div>
+                <div className="icon-text">
+                  <span>{t(`main.tab3.index3.span1`)}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="fourth contents-padding">
+            <div className="title-wrapper">
+              <span>Feel Free to Contact Us!</span>
+            </div>
+            <div className="form-wrapper">
+              <div className="label-text">
+                <input
+                  type="text"
+                  placeholder={t('form.name')}
+                  value={emailForm.name}
+                  onChange={($evt) => changeForm('name', $evt.target.value)}
+                />
+              </div>
+              <div className="label-text">
+                <input
+                  type="text"
+                  placeholder={t('form.email')}
+                  value={emailForm.email}
+                  onChange={($evt) => changeForm('email', $evt.target.value)}
+                />
+              </div>
+              <SelectInput
+                placeholder={t('form.purpos')}
+                items={items}
+                selected={emailForm.purpose}
+                onSelect={(v) => changeForm('purpose', v)}
+              />
+              <div className="label-textarea">
+                <textarea
+                  name="message"
+                  rows={6}
+                  placeholder={t('form.message')}
+                  value={emailForm.message}
+                  onChange={($evt) => changeForm('message', $evt.target.value)}
+                />
+              </div>
+              <div className="form-send">
+                <span className="hover-pointer" onClick={() => sendForm()}>
+                  {t('form.send')}
+                </span>
+                <br />
+                {formSent && <span className="sent">{t('form.sent')}</span>}
+              </div>
+            </div>
+          </div>
+          <Footer />
+        </div>
+      </section>
     </>
   )
 }

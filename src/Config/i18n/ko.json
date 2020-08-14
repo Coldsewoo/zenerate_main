@@ -2,6 +2,7 @@
   "hello": "헬로 월드!",
   "header": {
     "nav": {
+      "home": "홈",
       "about": "회사소개",
       "news": "새소식",
       "contact": "문의"

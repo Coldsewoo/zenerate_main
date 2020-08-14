@@ -2,6 +2,7 @@
   "hello": "Hello World!",
   "header": {
     "nav": {
+      "home": "HOME",
       "about": "ABOUT",
       "news": "NEWS",
       "contact": "CONTACT US"

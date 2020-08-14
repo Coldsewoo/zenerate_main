@@ -1,6 +1,7 @@
 import React from 'react'
 import './Assets/css/commom.scss'
 import './Assets/css/v1.scss'
+import './Assets/css/v1.mobile.scss'
 import './Assets/css/libraries.scss'
 
 import history from './Config/history'

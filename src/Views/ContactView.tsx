@@ -127,6 +127,56 @@ const ContactView: React.FC<Props> = ({ match, history, location }) => {
           <Footer />
         </div>
       </div>
+      <section className="section-main-mobile mobile">
+        <div className="mobile-wrapper">
+          <div className="fourth contents-padding">
+            <div className="title-wrapper">
+              <span>Feel Free to Contact Us!</span>
+            </div>
+            <div className="form-wrapper">
+              <div className="label-text">
+                <input
+                  type="text"
+                  placeholder={t('form.name')}
+                  value={emailForm.name}
+                  onChange={($evt) => changeForm('name', $evt.target.value)}
+                />
+              </div>
+              <div className="label-text">
+                <input
+                  type="text"
+                  placeholder={t('form.email')}
+                  value={emailForm.email}
+                  onChange={($evt) => changeForm('email', $evt.target.value)}
+                />
+              </div>
+              <SelectInput
+                placeholder={t('form.purpos')}
+                items={items}
+                selected={emailForm.purpose}
+                onSelect={(v) => changeForm('purpose', v)}
+              />
+              <div className="label-textarea">
+                <textarea
+                  name="message"
+                  rows={6}
+                  placeholder={t('form.message')}
+                  value={emailForm.message}
+                  onChange={($evt) => changeForm('message', $evt.target.value)}
+                />
+              </div>
+              <div className="form-send">
+                <span className="hover-pointer" onClick={() => sendForm()}>
+                  {t('form.send')}
+                </span>
+                <br />
+                {formSent && <span className="sent">{t('form.sent')}</span>}
+              </div>
+            </div>
+          </div>
+          <Footer />
+        </div>
+      </section>
     </>
   )
 }

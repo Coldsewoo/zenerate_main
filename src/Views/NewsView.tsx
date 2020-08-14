@@ -46,7 +46,7 @@ const NewsView: React.FC<Props> = ({ state }) => {
             {newsScrollIndex === 0 && (
               <div className="news-nav prev placeholder"></div>
             )}
-            {[...new Array(3)].map((_, i) => (
+            {[...new Array(newsLen)].map((_, i) => (
               <div
                 key={i}
                 className="news-item-wrapper hover-pointer noselect"
@@ -73,9 +73,28 @@ const NewsView: React.FC<Props> = ({ state }) => {
           </div>
         </div>
       </div>
+      <div className="section-news-mobile mobile">
+          <div className="news-wrapper contents-padding">
+            {[...new Array(newsLen)].map((_, i) => (
+              <div
+                key={i}
+                className="news-item-wrapper hover-pointer noselect"
+                onClick={($evt) => handleModalIndex($evt, newsScrollIndex + i)}>
+                <div className="news-item-date">
+                  <span>
+                    {t(`news.news${newsScrollIndex + i}.created_date`)}
+                  </span>
+                </div>
+                <div className="news-item-title">
+                  <span>{t(`news.news${newsScrollIndex + i}.title`)}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+      </div>
       <CSSTransition
         in={newsModalIndex !== null}
-        timeout={300}
+        timeout={200}
         classNames="fade"
         unmountOnExit>
         <section
@@ -83,7 +102,7 @@ const NewsView: React.FC<Props> = ({ state }) => {
           onClick={($evt) => handleModalIndex($evt, null)}>
           <CSSTransition
             in={newsModalIndex !== null}
-            timeout={300}
+            timeout={200}
             classNames="slide-right"
             unmountOnExit>
             <div

@@ -11,6 +11,11 @@ import {
   // @ts-ignore
 } from '../Context/I18n.context.tsx'
 
+import {
+  useToggleModalState,
+  //@ts-ignore
+} from '../Context/Modal.context.tsx'
+
 import { RouteProps } from 'react-router-dom'
 
 interface Props extends RouteProps {}
@@ -24,6 +29,7 @@ const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
     })
   }
   const langState = useLangState()
+  const modalState = useToggleModalState()
 
   return (
     <div
@@ -33,6 +39,7 @@ const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
           langState === 'ko'
             ? 'source-han-sans-korean'
             : 'neue-haas-grotesk-text',
+        position: modalState ? 'fixed' : 'static',
       }}>
       <Header {...props}></Header>
       <section className="section-wrapper">
@@ -47,7 +54,6 @@ const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
           navigation={true}
           lazyloading
           responsiveWidth={1279}
-          refresh
           keyboardScrolling
           scrollOverflow
           navigationPosition={'right'}

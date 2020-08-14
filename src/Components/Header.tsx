@@ -27,16 +27,24 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
   const ToggleModal = useToggleModalState()
   const dispatchToggleModal = useToggleModalDispatch()
 
+  const [openDrawer, setOpenDrawer] = useState(false)
+
   const [t, i18n] = useTranslation('lang', { useSuspense: false })
 
   const handleLanguageChange = () => {
     dispatchLang({ type: 'CHANGE', lang: i18n.language === 'ko' ? 'en' : 'ko' })
   }
+
+  const toggleDrawer = () => {
+    setOpenDrawer(!openDrawer)
+  }
+
   useEffect(() => {
     i18n.changeLanguage(lang)
   }, [i18n, lang])
 
   useEffect(() => {
+    setOpenDrawer(false)
     setScroll({ type: 'ROUTE', data: { page: match.path } })
   }, [setScroll, match])
 
@@ -47,7 +55,7 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
         style={{
           zIndex: ToggleModal ? 0 : 1000,
         }}>
-        <div className="header-pc">
+        <div className="header-pc pc">
           <div
             className={`header-wrapper ${
               THEME[scroll.page][scroll.index].header
@@ -60,14 +68,14 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
             <div className="header-nav">
               <ul>
                 <li>
-          <Link to="/about">{t('header.nav.about')}</Link>
+                  <Link to="/about">{t(`header.nav.about`)}</Link>
                 </li>
                 {/* <li>PROJECTS</li> */}
                 <li>
-                  <Link to="/news">{t('header.nav.news')}</Link>
+                  <Link to="/news">{t(`header.nav.news`)}</Link>
                 </li>
                 <li>
-                  <Link to="/contact">{t('header.nav.contact')}</Link>
+                  <Link to="/contact">{t(`header.nav.contact`)}</Link>
                 </li>
               </ul>
             </div>
@@ -76,6 +84,70 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
             </div>
           </div>
         </div>
+        <div className="header-mobile mobile">
+          <div className="header-wrapper">
+            <div className="header-logo noselect hover-pointer">
+              <Link to="/">
+                <img src="/img/Zenerate_Logo_color.png" alt="" />
+              </Link>
+            </div>
+
+            <div
+              className="header-drawer hover-pointer"
+              style={{ marginLeft: 'auto' }}
+              onClick={() => toggleDrawer()}>
+              <i className="material-icons">menu</i>
+            </div>
+            <div className="header-lang">
+              <button onClick={handleLanguageChange}>
+                {i18n.language === 'ko' ? 'ENG' : 'KOR'}
+              </button>
+            </div>
+          </div>
+        </div>
+        {openDrawer && (
+          <div className="modal-menu">
+            <div className="menu-title">
+              <div className="menu-title-text">
+                <i
+                  className="material-icons hover-pointer"
+                  onClick={() => toggleDrawer()}>
+                  menu
+                </i>
+                <span>MENU</span>
+              </div>
+              <div className="menu-title-close">
+                <i
+                  className="material-icons hover-pointer"
+                  onClick={() => toggleDrawer()}>
+                  close
+                </i>
+              </div>
+            </div>
+            <div className="menu-nav">
+              <ul>
+                <li className="hover-pointer" onClick={() => history.push('/')}>
+                  <span>{t(`header.nav.home`)}</span>
+                </li>
+                <li
+                  className="hover-pointer"
+                  onClick={() => history.push('/about')}>
+                  <span>{t(`header.nav.about`)}</span>
+                </li>
+                <li
+                  className="hover-pointer"
+                  onClick={() => history.push('/news')}>
+                  <span>{t(`header.nav.news`)}</span>
+                </li>
+                <li
+                  className="hover-pointer"
+                  onClick={() => history.push('/contact')}>
+                  <span>{t(`header.nav.contact`)}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
       </section>
     </>
   )
