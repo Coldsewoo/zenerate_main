@@ -15,8 +15,8 @@
           .header-logo { width: 140px; height: 35px;font-family: "neue-haas-grotesk-text" !important;
             a, a img { width: 140px; height: 35px;}
           }
-          .header-lang { opacity: 0.5;
-            button {width: 65px; height: 35px; border-radius: 18px; background-color: $main; color:$white; font-size: 16px; line-height: 16px;font-weight: $bold;padding: 2px 0px;position: absolute;right: 0px;bottom: calc(-100vh + 175px);left: 0px;}
+          .header-lang {
+            button {width: 60px;height: 30px;border-radius: 18px;background-color: #4848ff;color: #ffffff;font-size: 16px;line-height: 16px;font-weight: 700;padding: 2px 0px;position: absolute;right: 48px;top: 6px;}
           }
           .header-drawer {
               i {font-size: 32px; color: $main; font-weight: $semi-bold;line-height: 41px;}

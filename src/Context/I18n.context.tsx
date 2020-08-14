@@ -18,7 +18,7 @@ const LangDispatchContext = createContext<LangDispatch | undefined>(undefined)
 const LangReducer = (state: LangState, action: Action) => {
   switch (action.type) {
     case 'INIT':
-      return 'en'
+      return localStorage.getItem('i18nextLng' as string) || 'ko'
     case 'CHANGE':
       return action.lang
     default:
@@ -26,7 +26,7 @@ const LangReducer = (state: LangState, action: Action) => {
   }
 }
 
-const initialLang = localStorage.getItem('i18nextLng' as string) || 'en'
+const initialLang = localStorage.getItem('i18nextLng' as string) || 'ko'
 
 export const LangContextProvider = ({
   children,
@@ -34,7 +34,6 @@ export const LangContextProvider = ({
   children: React.ReactNode
 }) => {
   const [lang, dispatch] = useReducer(LangReducer, initialLang)
-
   useEffect(() => {
     localStorage.setItem('i18nextLng', lang)
   }, [lang])
