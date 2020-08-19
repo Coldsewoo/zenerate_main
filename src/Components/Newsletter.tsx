@@ -3,11 +3,12 @@ import { useTranslation } from 'react-i18next'
 import ApiService from '../Service/api'
 
 interface Props {
-  classProp: string
+  classProp?: string
+  init: boolean
 }
 
-const Newsletter: React.FC<Props> = ({ classProp }) => {
-  const [clicked, setClick] = useState<boolean>(false)
+const Newsletter: React.FC<Props> = ({ classProp, init }) => {
+  const [clicked, setClick] = useState<boolean>(init)
   const [subscribed, setSubscribed] = useState<boolean>(false)
 
   const [email, setEmail] = useState<string>('')
@@ -39,6 +40,11 @@ const Newsletter: React.FC<Props> = ({ classProp }) => {
         onClick={($evt) => handleClick($evt, true)}>
         {clicked ? (
           <div className="expanded-inner">
+            <button className="close" onClick={($evt) => {
+              $evt.stopPropagation()
+              setClick(false)}}>
+              <i className="material-icons">close</i>
+            </button>
             <span>{t('footer.newsletter.context1')}</span>
             <br />
             <span className="margin-8">{t('footer.newsletter.context2')}</span>
@@ -57,15 +63,15 @@ const Newsletter: React.FC<Props> = ({ classProp }) => {
           </div>
         ) : subscribed ? (
           <div className="expanded-inner">
-            <span style={{ fontSize: '36px' }}>Thank you</span>
+            <span style={{ fontSize: '28px' }}>Thank you</span>
             <br />
-            <span style={{ fontSize: '36px' }}>For Subscribing!</span>
+            <span style={{ fontSize: '28px' }}>For Subscribing!</span>
             <br />
             <div
               style={{
                 width: '100%',
                 textAlign: 'right',
-                marginTop: '16px',
+                marginTop: '32px',
               }}>
               <span
                 className="hover-pointer"
