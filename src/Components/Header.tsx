@@ -7,7 +7,6 @@ import {
 // @ts-ignore
 import { useLangDispatch, useLangState } from '../Context/I18n.context.tsx'
 import {
-  useToggleModalDispatch,
   useToggleModalState,
   //@ts-ignore
 } from '../Context/Modal.context.tsx'
@@ -15,6 +14,8 @@ import { useTranslation } from 'react-i18next'
 import { THEME } from '../Config/theme'
 import { Link, withRouter } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router-dom'
+
+import Newsletter from './Newsletter'
 
 interface Props extends RouteComponentProps {}
 
@@ -25,7 +26,6 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
   const dispatchLang = useLangDispatch()
 
   const ToggleModal = useToggleModalState()
-  const dispatchToggleModal = useToggleModalDispatch()
 
   const [openDrawer, setOpenDrawer] = useState(false)
 
@@ -148,6 +148,7 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
             </div>
           </div>
         )}
+        <Newsletter classProp="header-newsletter" init={true} />
       </section>
     </>
   )

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: '/api/v1',
+  baseURL: 'https://mvp.zenerate.ai/api/v1',
   headers: {
     Accept: 'application/json',
     'Content-type': 'application/json',

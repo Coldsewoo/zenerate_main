@@ -11,7 +11,7 @@ const Footer: React.FC<Props> = () => {
     <div className="footer-wrapper contents-padding">
       <div className="spacer" />
       <div className="inner">
-        <Newsletter classProp="mobile" />
+        <Newsletter classProp="mobile" init={false} />
         <div className="inner-left">
           <div className="footer-text">
             <span>{t('footer.company')}</span>
@@ -31,7 +31,7 @@ const Footer: React.FC<Props> = () => {
             <span>COPYRIGHT © Zenerate Inc.</span>
           </div>
         </div>
-        <Newsletter classProp="pc" />
+        <Newsletter classProp="pc" init={false} />
       </div>
     </div>
   )
