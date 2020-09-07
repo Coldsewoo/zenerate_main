@@ -64,4 +64,14 @@ export const THEME = {
       header: 'header-color',
     },
   },
+  '/blog': {
+    init: {
+      logo: logo.color,
+      header: 'header-color',
+    },
+    0: {
+      logo: logo.color,
+      header: 'header-color',
+    },
+  },
 }

@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Footer } from '../Components'
 import { SelectInput, Item } from '../Components/inputs/SelectInput'
 
-import { RouteComponentProps, withRouter } from 'react-router-dom'
+import { RouteComponentProps } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import ApiService from '../Service/api'
 
 interface Props extends RouteComponentProps {}
-type selectedProjectType = {
-  [key: string]: boolean
-}
 
 type emailForm = {
   name: string

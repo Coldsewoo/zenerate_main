@@ -28,6 +28,7 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
   const ToggleModal = useToggleModalState()
 
   const [openDrawer, setOpenDrawer] = useState(false)
+  const [showNewsLetter, setShowNewsLetter] = useState(true)
 
   const [t, i18n] = useTranslation('lang', { useSuspense: false })
 
@@ -39,6 +40,10 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
     setOpenDrawer(!openDrawer)
   }
 
+  const handleDismiss = (flag) => {
+    setShowNewsLetter(flag)
+  }
+
   useEffect(() => {
     i18n.changeLanguage(lang)
   }, [i18n, lang])
@@ -46,6 +51,7 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
   useEffect(() => {
     setOpenDrawer(false)
     setScroll({ type: 'ROUTE', data: { page: match.path } })
+    if (match.path === '/') setShowNewsLetter(true)
   }, [setScroll, match])
 
   return (
@@ -70,9 +76,16 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
                 <li>
                   <Link to="/about">{t(`header.nav.about`)}</Link>
                 </li>
-                {/* <li>PROJECTS</li> */}
                 <li>
                   <Link to="/news">{t(`header.nav.news`)}</Link>
+                </li>
+                <li>
+                  <a
+                    href="https://medium.com/@zenerate"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    {t(`header.nav.blog`)}
+                  </a>
                 </li>
                 <li>
                   <Link to="/contact">{t(`header.nav.contact`)}</Link>
@@ -148,7 +161,14 @@ const Header: React.FC<Props> = ({ history, match }: Props) => {
             </div>
           </div>
         )}
-        <Newsletter classProp="header-newsletter" init={true} />
+        {showNewsLetter && (
+          <Newsletter
+            classProp="header-newsletter"
+            init={true}
+            dismissable={true}
+            handleDismiss={handleDismiss}
+          />
+        )}
       </section>
     </>
   )

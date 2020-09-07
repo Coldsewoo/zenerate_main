@@ -5,9 +5,16 @@ import ApiService from '../Service/api'
 interface Props {
   classProp?: string
   init: boolean
+  dismissable?: boolean
+  handleDismiss?: (boolean) => void
 }
 
-const Newsletter: React.FC<Props> = ({ classProp, init }) => {
+const Newsletter: React.FC<Props> = ({
+  classProp,
+  init,
+  dismissable = false,
+  handleDismiss = () => {},
+}) => {
   const [clicked, setClick] = useState<boolean>(init)
   const [subscribed, setSubscribed] = useState<boolean>(false)
 
@@ -29,6 +36,12 @@ const Newsletter: React.FC<Props> = ({ classProp, init }) => {
     setSubscribed(true)
   }
 
+  const handleClose = ($evt, flag) => {
+    $evt.stopPropagation()
+    if (dismissable) handleDismiss(flag)
+    else setClick(false)
+  }
+
   const t = useTranslation('lang', { useSuspense: false })[0]
 
   return (
@@ -40,9 +53,11 @@ const Newsletter: React.FC<Props> = ({ classProp, init }) => {
         onClick={($evt) => handleClick($evt, true)}>
         {clicked ? (
           <div className="expanded-inner">
-            <button className="close" onClick={($evt) => {
-              $evt.stopPropagation()
-              setClick(false)}}>
+            <button
+              className="close"
+              onClick={($evt) => {
+                handleClose($evt, false)
+              }}>
               <i className="material-icons">close</i>
             </button>
             <span>{t('footer.newsletter.context1')}</span>
@@ -77,8 +92,7 @@ const Newsletter: React.FC<Props> = ({ classProp, init }) => {
                 className="hover-pointer"
                 style={{ textDecoration: 'underline', fontSize: '20px' }}
                 onClick={($evt) => {
-                  $evt.stopPropagation()
-                  setClick(false)
+                  handleClose($evt, false)
                   setSubscribed(false)
                 }}>
                 close

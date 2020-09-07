@@ -1,4 +1,10 @@
-import React, { isValidElement, cloneElement, Children } from 'react'
+import React, {
+  isValidElement,
+  cloneElement,
+  Children,
+  useEffect,
+  useState,
+} from 'react'
 import { Header } from '../Components'
 import ReactFullpage from '@fullpage/react-fullpage'
 import {
@@ -31,6 +37,29 @@ const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
   const langState = useLangState()
   const modalState = useToggleModalState()
 
+  const [position, setPosition] = useState<'fixed' | 'static'>('static')
+  const [top, setTop] = useState<number>(0)
+
+  useEffect(() => {
+    if (modalState) {
+      const scrollTop =
+        window.pageYOffset !== undefined
+          ? window.pageYOffset
+          : (
+              document.documentElement ||
+              (document.body.parentNode as any) ||
+              document.body
+            ).scrollTop
+      setPosition('fixed')
+      setTop(scrollTop)
+    } else {
+      setPosition('static')
+      setTimeout(() => {
+        window.scroll(0, top)
+      }, 0)
+    }
+  }, [modalState])
+
   return (
     <div
       className="body"
@@ -39,13 +68,13 @@ const DefaultLayout: React.FC<Props> = ({ children, ...props }) => {
           langState === 'ko'
             ? 'source-han-sans-korean'
             : 'neue-haas-grotesk-text',
-        position: modalState ? 'fixed' : 'static',
+        position,
       }}>
       <Header {...props}></Header>
       <section className="section-wrapper">
         <ReactFullpage
           //fullpage options
-          licenseKey="OPEN-SOURCE-GPLV3-LICENSE"
+          licenseKey="CE108429-34644C5A-BD3748C3-5A35CACF"
           scrollingSpeed={600} /* Options here */
           onLeave={(origin, destination, direction) => {
             onChangeIndex({ destination })

@@ -15,9 +15,13 @@ const NewsView: React.FC<Props> = ({ state }) => {
   const [newsScrollIndex, setNewsScrollIndex] = useState(0)
   const [newsModalIndex, setNewsModalIndex] = useState<number | null>(null)
   const t = useTranslation('lang', { useSuspense: false })[0]
-  const newsLen = 3
+  const newsLen = 8
   const handleIndex = (inc: number) => {
-    setNewsScrollIndex(newsScrollIndex + inc)
+    if (inc > 0) {
+      setNewsScrollIndex(Math.min(newsScrollIndex + inc, newsLen - 3))
+    } else {
+      setNewsScrollIndex(Math.max(newsScrollIndex + inc, 0))
+    }
   }
   const dispatch = useToggleModalDispatch()
 
@@ -40,32 +44,50 @@ const NewsView: React.FC<Props> = ({ state }) => {
           <div className="news-wrapper">
             {newsScrollIndex > 0 && (
               <div
-                className="news-nav prev"
-                onClick={() => handleIndex(-1)}></div>
+                className="news-nav prev hover-pointer"
+                onClick={() => handleIndex(-3)}></div>
             )}
             {newsScrollIndex === 0 && (
               <div className="news-nav prev placeholder"></div>
             )}
-            {[...new Array(newsLen)].map((_, i) => (
+            {[...new Array(3)].map((_, i) => (
               <div
                 key={i}
                 className="news-item-wrapper hover-pointer noselect"
-                onClick={($evt) => handleModalIndex($evt, newsScrollIndex + i)}>
+                onClick={($evt) =>
+                  handleModalIndex($evt, -newsScrollIndex + (newsLen - i - 1))
+                }>
                 <div className="news-item-date">
                   <span>
-                    {t(`news.news${newsScrollIndex + i}.created_date`)}
+                    {t(
+                      `news.news${
+                        -newsScrollIndex + (newsLen - i - 1)
+                      }.created_date`
+                    )}
                   </span>
                 </div>
                 <div className="news-item-title">
-                  <span>{t(`news.news${newsScrollIndex + i}.title`)}</span>
+                  <div
+                    className="news-item-image"
+                    style={{
+                      backgroundImage:
+                        "url('https://via.placeholder.com/10000x190')",
+                    }}></div>
+                  <div className="news-item-text">
+                    <span>
+                      {t(
+                        `news.news${-newsScrollIndex + (newsLen - i - 1)}.title`
+                      )}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
 
             {newsScrollIndex < newsLen - 3 && (
               <div
-                className="news-nav next"
-                onClick={() => handleIndex(1)}></div>
+                className="news-nav next hover-pointer"
+                onClick={() => handleIndex(3)}></div>
             )}
             {newsScrollIndex === newsLen - 3 && (
               <div className="news-nav next placeholder"></div>
@@ -74,23 +96,29 @@ const NewsView: React.FC<Props> = ({ state }) => {
         </div>
       </div>
       <div className="section-news-mobile mobile">
-          <div className="news-wrapper contents-padding">
-            {[...new Array(newsLen)].map((_, i) => (
-              <div
-                key={i}
-                className="news-item-wrapper hover-pointer noselect"
-                onClick={($evt) => handleModalIndex($evt, newsScrollIndex + i)}>
-                <div className="news-item-date">
-                  <span>
-                    {t(`news.news${newsScrollIndex + i}.created_date`)}
-                  </span>
-                </div>
-                <div className="news-item-title">
-                  <span>{t(`news.news${newsScrollIndex + i}.title`)}</span>
+        <div className="news-wrapper contents-padding">
+          {[...new Array(newsLen)].map((_, i) => (
+            <div
+              key={i}
+              className="news-item-wrapper hover-pointer noselect"
+              onClick={($evt) => handleModalIndex($evt, newsLen - i - 1)}>
+              <div className="news-item-date">
+                <span>{t(`news.news${newsLen - i - 1}.created_date`)}</span>
+              </div>
+              <div className="news-item-title">
+                <div
+                  className="news-item-image"
+                  style={{
+                    backgroundImage:
+                      "url('https://via.placeholder.com/10000x190')",
+                  }}></div>
+                <div className="news-item-text">
+                  <span>{t(`news.news${newsLen - i - 1}.title`)}</span>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
       </div>
       <CSSTransition
         in={newsModalIndex !== null}
@@ -120,6 +148,9 @@ const NewsView: React.FC<Props> = ({ state }) => {
                   </div>
                   <div className="news-modal-item title">
                     <span>{t(`news.news${newsModalIndex}.title`)}</span>
+                  </div>
+                  <div className="news-modal-item image">
+                    <img src="https://via.placeholder.com/100x190" alt=""/>
                   </div>
                   <div className="news-modal-item content">
                     <span>{t(`news.news${newsModalIndex}.contents`)}</span>

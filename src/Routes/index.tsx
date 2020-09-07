@@ -6,6 +6,7 @@ import {
   AboutView,
   NewsView,
   ContactView,
+  // BlogView,
 } from '../Views'
 import DefaultLayout from '../Layouts'
 import { WithRouterStatics } from 'react-router'
@@ -62,6 +63,12 @@ export const DefaultRouter: React.FC<Props> = () => {
         layout={DefaultLayout}
         component={ContactView}
       />
+      {/* <DefaultRoute
+        exact
+        path="/blog"
+        layout={DefaultLayout}
+        component={BlogView}
+      /> */}
       <DefaultRoute
         exact
         path="/404"

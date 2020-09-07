@@ -30,7 +30,7 @@
             .inner-left {margin-top: 24px;}
             .newsletter-wrapper { position: relative;
                 .newsletter-button {position: absolute; bottom: 0px; width: 240px; height: 40px;
-                    span {font-size: 16px;}
+                    span {font-size: 16px; line-height: 25px;}
                     &.expanded {height: 180px;}
                     .expanded-inner {padding: 14px 0px;
                         span {font-size: 19px}
@@ -129,12 +129,15 @@
               .news-item-date {width: 100%; height: 60px; border-bottom: solid 2px $main;text-align: center;
                 span {font-size:20px; color: $main;line-height: 60px;}
               }
-              .news-item-title {width: 100%; height: auto;margin: auto; text-align: center;padding: 0px 24px;
-                span {font-size: 31px; color: $main; font-weight: $semi-bold;line-height: 125%;}
+              .news-item-title {width: 100%; height: 360px;margin: auto; text-align: center;padding: 24px 8px; height: 100%;
+                .news-item-image { background-origin: center; background-position: center; width: 260px; height: 190px; margin: 0px auto}
+                .news-item-text { display: flex; flex-direction: column; justify-content: center; text-align: center;height: 118px;
+                  span {font-size: 22px;color: #4848ff; font-weight: 600;line-height: 125%;}
+                }
               }
               &:hover { background-color: $main;
                 .news-item-date {border-bottom-color: $white}
-                span {color: $white}
+                .news-item-text span, span {color: $white}
               }
             }
           }
