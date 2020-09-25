@@ -15,7 +15,7 @@ const NewsView: React.FC<Props> = ({ state }) => {
   const [newsScrollIndex, setNewsScrollIndex] = useState(0)
   const [newsModalIndex, setNewsModalIndex] = useState<number | null>(null)
   const t = useTranslation('lang', { useSuspense: false })[0]
-  const newsLen = 8
+  const newsLen = 9
   const handleIndex = (inc: number) => {
     if (inc > 0) {
       setNewsScrollIndex(Math.min(newsScrollIndex + inc, newsLen - 3))
@@ -67,12 +67,12 @@ const NewsView: React.FC<Props> = ({ state }) => {
                   </span>
                 </div>
                 <div className="news-item-title">
-                  <div
+                  {/* <div
                     className="news-item-image"
                     style={{
                       backgroundImage:
                         "url('https://via.placeholder.com/10000x190')",
-                    }}></div>
+                    }}></div> */}
                   <div className="news-item-text">
                     <span>
                       {t(
@@ -106,12 +106,12 @@ const NewsView: React.FC<Props> = ({ state }) => {
                 <span>{t(`news.news${newsLen - i - 1}.created_date`)}</span>
               </div>
               <div className="news-item-title">
-                <div
+                {/* <div
                   className="news-item-image"
                   style={{
                     backgroundImage:
                       "url('https://via.placeholder.com/10000x190')",
-                  }}></div>
+                  }}></div> */}
                 <div className="news-item-text">
                   <span>{t(`news.news${newsLen - i - 1}.title`)}</span>
                 </div>
@@ -149,9 +149,9 @@ const NewsView: React.FC<Props> = ({ state }) => {
                   <div className="news-modal-item title">
                     <span>{t(`news.news${newsModalIndex}.title`)}</span>
                   </div>
-                  <div className="news-modal-item image">
+                  {/* <div className="news-modal-item image">
                     <img src="https://via.placeholder.com/100x190" alt=""/>
-                  </div>
+                  </div> */}
                   <div className="news-modal-item content">
                     <span>{t(`news.news${newsModalIndex}.contents`)}</span>
                   </div>

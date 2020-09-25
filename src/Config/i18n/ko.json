@@ -66,9 +66,9 @@
       "contents": "제너레잇이 제1회 LH 공공데이터 창업경진대회에서 장려상을 수상했다. 공공데이터인 LH 아파트 평면 정보를 활용하여 아파트 단지 배치의 조망을 점수화하고 신속하게 평가할 수 있는 '머신러닝을 이용한 조망 평가 툴'을 개발하여 좋은 평가를 받았다. 기존 방식과는 달리 한 단지의 전세대를 실시간으로 평가할수 있고, 다양한 단지배치안끼리도 조망의 관점에서 비교가 가능하다. 제너레잇은 본 대회의 1회 선발 팀으로 LH로부터 상금 외에도 다양한 지원을 받게 되었다.",
       "created_date": "2020년 7월 15일",
       "linkTitle": "관련 기사",
-      "link1": "https://www.venturesquare.net/812696",
-      "link2": "https://platum.kr/archives/146280",
-      "link3": "https://www.metroseoul.co.kr/article/20200802500156"
+      "link1": "https://www.news1.kr/articles/?4013885",
+      "link2": "https://www.asiatoday.co.kr/view.php?key=20200802010000047",
+      "link3": ""
     },
     "news2": {
       "title": "한양대 캠퍼스타운 창업경진대회 수상",
@@ -103,6 +103,15 @@
       "created_date": "2020년 8월 25일",
       "linkTitle": "기사 링크",
       "link1": "http://www.viva100.com/main/view.php?key=20200825010004386",
+      "link2": "",
+      "link3": ""
+    },
+    "news8": {
+      "title": "COMEUP2020 온라인 피치 대회 최종선정",
+      "contents": "제너레잇이 컴업 온라인 스타트업 피치 대회에 최종 선발 되어 본행사에서 발표하는 120개의 스타트업과 함께 발표를 할 수 있는 기회를 얻었다. 제너레잇은 루키리그에 지원하여 전문가 심사위원단과 시민평가단으로 구성된 심사위원회의 평가를 통해 지원한 500개사들 중에 최종 36개로 선정되었다. \n컴업은 국내 유니콘 스타트업 및 유수의 창업 전문가로 구성된 민간 조직위원회와 중소벤처기업부, 창업진흥원 등 정부 기관이 공동 운영하는 글로벌 행사다. 본행사는 11월 19일부터 21일까지 개최된다.",
+      "created_date": "2020년 9월 11일",
+      "linkTitle": "기사 링크",
+      "link1": "https://www.mss.go.kr/site/smba/ex/bbs/View.do?cbIdx=86&bcIdx=1021172&parentSeq=1021172",
       "link2": "",
       "link3": ""
     }

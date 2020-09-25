@@ -25,7 +25,7 @@ const Footer: React.FC<Props> = () => {
             </span>
           </div>
           <div className="footer-text">
-            <span>bshin@zenerate.ai</span>
+            <span>help@zenerate.ai</span>
           </div>
           <div className="footer-text">
             <span>COPYRIGHT © Zenerate Inc.</span>
