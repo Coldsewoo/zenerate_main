@@ -15,7 +15,7 @@ const NewsView: React.FC<Props> = ({ state }) => {
   const [newsScrollIndex, setNewsScrollIndex] = useState(0)
   const [newsModalIndex, setNewsModalIndex] = useState<number | null>(null)
   const t = useTranslation('lang', { useSuspense: false })[0]
-  const newsLen = 9
+  const newsLen = 16
   const handleIndex = (inc: number) => {
     if (inc > 0) {
       setNewsScrollIndex(Math.min(newsScrollIndex + inc, newsLen - 3))
@@ -153,7 +153,9 @@ const NewsView: React.FC<Props> = ({ state }) => {
                     <img src="https://via.placeholder.com/100x190" alt=""/>
                   </div> */}
                   <div className="news-modal-item content">
-                    <span>{t(`news.news${newsModalIndex}.contents`)}</span>
+                    <span style={{whiteSpace: 'pre-line'}}>
+                      {t(`news.news${newsModalIndex}.contents`)}
+                    </span>
                   </div>
                   <div className="news-modal-item links">
                     <span>{t(`news.news${newsModalIndex}.linkTitle`)}</span>

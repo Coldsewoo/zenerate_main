@@ -1,4 +1,5 @@
 @import './variables';
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css?family=Noto+Sans+KR:400,500,700&display=swap');
 
 * {box-sizing:border-box;vertical-align:middle;}
 *:focus {outline: none;}
@@ -24,7 +25,8 @@ a {&, &:visited, &:hover, &:active {color: inherit;text-decoration: none;}}
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
 }
-body {font-family: "neue-haas-grotesk-text","source-han-sans-korean", "sans-serif" "Times New Roman", Times, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;margin: 0px;background-color: white;}
+* {font-family: "aileron", "Noto Sans KR"}
+body {font-family: "aileron", "Noto Sans KR", "sans-serif" "Times New Roman", Times, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,sans-serif;margin: 0px;background-color: white;}
 div.body { width: 100%;}
 button {outline: none;cursor:pointer;background:#fff;border:none;}
 input {box-sizing:border-box}
